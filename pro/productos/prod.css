@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+body {
+    font-family: "Varela Round", sans-serif;
+    margin: 0;
+}
+
+nav {
+    box-sizing: border-box;
+    background-color: white;
+    color: #777;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 8px 8px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 40px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+nav li {
+    position: relative;
+    height: 50px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #777;
+    line-height: 50px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+nav li:hover a {
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    z-index: 1001;
+    border-radius: 0 0 8px 8px;
+}
+
+nav li:hover > ul,
+nav li ul:hover {
+    display: inherit;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+nav li ul li {
+    width: 100%;
+}
+
+nav li ul a {
+    color: #333;
+}
+
+nav li.search,
+nav li.ingresar-option,
+nav li.cart {
+    margin-left: auto;
+}
+
+nav li.search,
+nav li.ingresar-option,
+nav li.cart,
+nav li.search input,
+nav li.cart a {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px; /* Ajuste para que la animación abarque toda la opción */
+}
+nav li.ingresar-option a{
+    width: 100px;
+    height: 50px;
+    border-radius: 8px; /* Ajuste para que la animación abarque toda la opción */
+}
+
+nav li.search {
+    margin-right: 10px;
+}
+
+nav li.search input {
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+nav li.cart a {
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+nav li.ingresar-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    width: 120px;
+    border-radius: 8px; /* Ajuste para que la animación abarque toda la opción */
+}
+
+nav li.ingresar-option a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+ }
+
+nav li.ingresar-option a img {
+    width: 25px;
+    height: auto;
+    margin-bottom: 2px;
+}
+nav input[type="text"] {
+    border: 2px solid #ccc; /* Borde gris */
+    padding: 8px;
+    border-radius: 20px; /* Ajusta el valor según tus preferencias */
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffffe6; /* Color de fondo inicial */
+    color: #333; /* Color del texto inicial */
+}
+
+nav input[type="text"]:focus {
+    border-color: #000; /* Color del borde cuando la barra de búsqueda está enfocada */
+    background-color: #ffffff; /* Color de fondo cuando la barra de búsqueda está enfocada */
+    color: #333; /* Color del texto cuando la barra de búsqueda está enfocada */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#productos {
+    max-width: 1200px;
+    margin: 80px auto 20px;
+}
+
+.categoria {
+    margin-bottom: 30px;
+}
+
+.categoria h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.productos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.producto {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.producto img:hover {
+    filter: brightness(85%);
+}
+
+#seccion-negra {
+    background-color: #000;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+   bottom: 0%;
+}
+
+
+
+.contenido-seccion {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#seccion-negra h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#seccion-negra p {
+    font-size: 1.2em;
+}
+
+.productos-container {
+    max-width: 1200px;
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-bottom: 100px;
+   
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos se envuelvan en varias filas */
+    justify-content: space-between; /* Distribuye los productos uniformemente en el contenedor */
+}
+
+
+
+/* Ajuste para reducir el tamaño del texto en los productos */
+.producto h4, .producto p {
+    font-size: 14px;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.contenedorCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    transition: ease all 0.3s;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    .nombreProd {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+
+    .precio {
+        font-size: 14px;
+        color: #b82d44;
+    }
+}
+.carrito-icon {
+    
+    margin-top: 8px;
+    width: 17%; /* Reducción del 15% */
+    height: auto;
+}
+.tituloprod{
+    margin-top: 100px;
+margin-left: 30px;
+}
+
+
+.tarjeta {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 5px;
+}
+
+.tarjeta:hover {
+    transform: scale(1.021);
+}
+
+.tarjeta img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.tarjeta p {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.contam {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   padding-top: 100px;
+   padding-bottom: 13px;
+    height: 400px;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.tarjeta-producto {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 10px;
+    width: 200px;
+}
+
+.tarjeta-producto:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta-producto img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.info-producto {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.nombre-producto {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.precio-producto {
+    margin-top: 5px;
+    font-size: 14px;
+}
+.imgtp{
+
+    margin-bottom: 16px;
+}
+.tseguro {
+    margin-bottom: 5px;
+}
+.tcilindro {
+    margin-bottom: 23px;
+}
+.tbotella {
+    margin-bottom: 20px;
+}
+.tbase {
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+}
+.tbaseg{
+margin-top: 13px;
+    margin-bottom: 15px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.contenidogr {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+

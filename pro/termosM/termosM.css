@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+body {
+    font-family: "Varela Round", sans-serif;
+    margin: 0;
+}
+
+nav {
+    box-sizing: border-box;
+    background-color: white;
+    color: #777;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 8px 8px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 40px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+nav li {
+    position: relative;
+    height: 50px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #777;
+    line-height: 50px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+nav li:hover a {
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    z-index: 1001;
+    border-radius: 0 0 8px 8px;
+}
+
+nav li:hover > ul,
+nav li ul:hover {
+    display: inherit;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+nav li ul li {
+    width: 100%;
+}
+
+nav li ul a {
+    color: #333;
+}
+
+nav li.search,
+nav li.ingresar-option,
+nav li.cart {
+    margin-left: auto;
+}
+
+nav li.search,
+nav li.ingresar-option,
+nav li.cart,
+nav li.search input,
+nav li.cart a {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px; /* Ajuste para que la animación abarque toda la opción */
+}
+nav li.ingresar-option a{
+    width: 100px;
+    height: 50px;
+    border-radius: 8px; /* Ajuste para que la animación abarque toda la opción */
+}
+
+nav li.search {
+    margin-right: 10px;
+}
+
+nav li.search input {
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+nav li.cart a {
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+nav li.ingresar-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    width: 120px;
+    border-radius: 8px; /* Ajuste para que la animación abarque toda la opción */
+}
+
+nav li.ingresar-option a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+ }
+
+nav li.ingresar-option a img {
+    width: 25px;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+.producto-detalle {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px;
+    margin-top: 150px;
+}
+
+.imagen-producto img {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.info-producto {
+    max-width: 400px;
+}
+
+.info-producto h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 18px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.descripcion {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+.colores {
+    display: flex;
+    margin-top: 10px;
+}
+
+/* Estilos de los colores */
+.radio-color {
+    display: none;
+}
+
+.label-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: gray; /* Agregado para visualización */
+    display: inline-block; /* Agregado para visualización */
+}
+
+.color-morado { background-color: purple; } /* Agregado para visualización */
+.color-rojo { background-color: red; } /* Agregado para visualización */
+.color-azul { background-color: blue; } /* Agregado para visualización */
+.color-blanco { background-color: rgb(227, 225, 225); } /* Agregado para visualización */
+.color-rosa { background-color: pink; } /* Agregado para visualización */
+.color-gris { background-color: grey; } /* Agregado para visualización */
+.color-verde { background-color: rgb(101, 236, 216); } /* Agregado para visualización */
+
+.radio-color:checked + .label-color {
+    transform: scale(1.2);
+}
+
+/* Estilos del formulario de cantidad */
+.cantidad {
+    margin-top: 10px;
+}
+
+#restar,
+#sumar {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+#cantidad {
+    width: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos del botón de añadir al carrito */
+.btn-carrito {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px ;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-carrito:hover {
+    background-color: #0f0f0f;
+    box-shadow: 0 0 15px rgba(35, 35, 35, 0.3);
+}
+
+.btn-carrito:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.imagen-producto {
+    position: relative;
+    max-width: 300px; /* Ajusta según tu preferencia */
+    margin-right: 20px; /* Espaciado entre la imagen y la información del producto */
+    height: 70%;
+}
+
+.termo-imagen {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+}
+
+#seccion-negra {
+    background-color: #000;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    bottom: 0%;
+}
+
+.contenido-seccion {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#seccion-negra h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#seccion-negra p {
+    font-size: 1.2em;
+}
+.btn-regresar {
+    background-color: #777;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 60px; /* Ajusta esto según la altura de tu barra de menú */
+    left: 10px;
+    
+    margin-left: 40px;
+}
+
+.btn-regresar span {
+    margin-right: 5px;
+}
+nav input[type="text"] {
+    border: 2px solid #ccc; /* Borde gris */
+    padding: 8px;
+    border-radius: 20px; /* Ajusta el valor según tus preferencias */
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffffe6; /* Color de fondo inicial */
+    color: #333; /* Color del texto inicial */
+}
+
+nav input[type="text"]:focus {
+    border-color: #000; /* Color del borde cuando la barra de búsqueda está enfocada */
+    background-color: #ffffff; /* Color de fondo cuando la barra de búsqueda está enfocada */
+    color: #333; /* Color del texto cuando la barra de búsqueda está enfocada */
+}
